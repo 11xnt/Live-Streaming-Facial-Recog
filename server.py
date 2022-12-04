@@ -14,10 +14,11 @@ sio = socketio.Server()
 # create a wsgi application using the socket io and application
 appServer = socketio.WSGIApp(sio, app)
 
-
 if __name__ == '__main__':
     try:
         logger.info("Server starting")
+        # empty 'host' will run default on ip address, set value to localhost if needed
+        # threads value equates to given
         serve(appServer, host='', port=5000, url_scheme='http', threads=6, expose_tracebacks=True,
               log_untrusted_proxy_headers=True)
     except KeyboardInterrupt:
