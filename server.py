@@ -19,7 +19,7 @@ if __name__ == '__main__':
         logger.info("Server starting")
         # empty 'host' will run default on ip address, set value to localhost if needed
         # threads value equates to given
-        serve(appServer, host='', port=5000, url_scheme='http', threads=6, expose_tracebacks=True,
+        serve(appServer, host='0.0.0.0', port=8080, url_scheme='http', threads=6, expose_tracebacks=True,
               log_untrusted_proxy_headers=True)
     except KeyboardInterrupt:
         logger.info("Server Shutting down")
